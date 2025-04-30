@@ -1,0 +1,46 @@
+digraph "Simplified Object Detection" {
+	rankdir=LR
+	node [fontname=Arial fontsize=12 shape=box style=filled]
+	Imports [label="Necessary Imports
+(Easy)" fillcolor="#A0E7A0"]
+	LoadData [label="Load in Your Dataset
+(Easy)" fillcolor="#A0E7A0"]
+	AugmentData [label="Define Data Augmentations
+(Easy)" fillcolor="#A0E7A0"]
+	DatasetDataloader [label="Create a Dataset and Dataloaders
+(Moderate)" fillcolor="#F6D49A"]
+	VisualizeSample [label="Visualize Training Data
+(Easy)" fillcolor="#A0E7A0"]
+	CreateModel [label="Create the Image Captioning Model
+(Difficult)" fillcolor="#F6A0A0"]
+	Hyperparameters [label="Define Loss Function and Optimizer
+(Moderate)" fillcolor="#F6D49A"]
+	TrainModel [label="Train the Image Captioning Model
+(Difficult)" fillcolor="#F6A0A0"]
+	VisualizeTrain [label="Visualize Training Metrics
+(Easy)" fillcolor="#A0E7A0"]
+	VisualizeAtt [label="Visualize Attention Weights
+(Moderate)" fillcolor="#F6D49A"]
+	RunInference [label="Run Inference on the Image Captioning Model
+(Moderate)" fillcolor="#F6D49A"]
+	LoadModel [label="Load an Existing Image Captioning Model
+(Easy)" fillcolor="#A0E7A0"]
+	EvaluateModel [label="Evaluate the Existing Image Captioning Model
+(Moderate)" fillcolor="#F6D49A"]
+	Comparison [label="Compare the Two Models
+(Difficult)" fillcolor="#F6A0A0"]
+	Imports -> LoadData
+	LoadData -> AugmentData
+	AugmentData -> DatasetDataloader
+	DatasetDataloader -> CreateModel
+	DatasetDataloader -> VisualizeSample
+	CreateModel -> Hyperparameters
+	Hyperparameters -> TrainModel
+	TrainModel -> VisualizeTrain
+	TrainModel -> VisualizeAtt
+	TrainModel -> RunInference
+	DatasetDataloader -> LoadModel
+	LoadModel -> EvaluateModel
+	RunInference -> Comparison
+	EvaluateModel -> Comparison
+}
